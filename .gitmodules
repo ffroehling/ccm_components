@@ -1,3 +1,0 @@
-[submodule "communication_testing/ccm"]
-	path = communication_testing/ccm
-	url = https://github.com/ccmjs/ccm.git

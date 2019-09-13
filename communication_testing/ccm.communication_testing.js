@@ -16,7 +16,7 @@
     name: 'communication_testing',
     version: [1,0,0],
     
-    ccm: './ccm/versions/ccm-20.7.2.js',
+    ccm: './ccm-20.7.3.js',
     /**
      * default instance configuration
      * @type {object}
