@@ -25,9 +25,11 @@
       html: {
         main: {
           inner: [
-              {tag : "h3", inner : 'Received instances without time delay'},
+              {tag : "h3", inner : 'Received instances immediatly after start'},
               {tag : "ul", inner : []},
-              {tag : "h3", inner : 'Received instances with time delay'},
+              {tag : "h3", inner : 'Received instances with random delay'},
+              {tag : "ul", inner : []},
+              {tag : "h3", inner : 'Received instances with small delay'},
               {tag : "ul", inner : []}
           ]
         }
@@ -70,74 +72,111 @@
       };
 
       /*
+       * Saves the dataset to the database and therefor notifies other instances
+       */
+      this.save = async () => {
+        await this.datastore.store.set(this.dataset);
+      }
+
+      this.check_iter_finish = () => {
+        //get's the html list index depending on the iteration
+        let list_idx = (2* this.iteration) -1 ; 
+
+        //get the list
+        let list = this.html.main.inner[list_idx].inner; 
+
+        if((list.length == (this.total - 1)) && this.sended){
+            //we sended our value AND the list is full -> next iteration
+            this.iteration += 1;
+
+            if(this.iteration > 3){
+              //we are done -> display results if configured
+              if(this.show_results){ //instance shall display the content
+                let html = $.html(this.html.main);
+                $.setContent(self.element, html);
+              }
+              else{ //no display wished
+                $.setContent(self.element, "");
+              }
+
+            }
+            else{
+              //repeat the sending logic
+              this.sended = false;
+              setTimeout(this.write, 5000);
+            }
+        }
+      };
+
+      /*
        * Get's called upon dataset change notified by server
        * */
       this.onreceive = async (dataset) => {
+        let rec_iteration = dataset.sended_value.iteration;
+        let rec_value = dataset.sended_value.identifier;
 
+        //first check if we received a value from a wrong iteration
+        if(rec_iteration != this.iteration){
+          alert(this.identifier + ': Received invalid iteration from other instance (' + rec_value + ') should be ' + this.iteration + ', but is ' + rec_iteration);
+          return;
+        }
+
+        //create the list entry
         let li = {
           tag : 'li', 
-          inner : dataset.sended_value
+          inner : rec_value
         };
+       
+        //get's the html list index depending on the iteration
+        let list_idx = (2* this.iteration) -1 ; 
 
-        if(!this.time_delay){
-          this.html.main.inner[1].inner.push(li);
+        //get the list
+        let list = this.html.main.inner[list_idx].inner; 
 
-          if(this.html.main.inner[1].inner.length == (this.total-1)){
-            /*
-             * we received anything without delay 
-              -> trigger now the communication with delay
-            */
-            this.send_delay(); 
-          }
-        }
-        else{
-          this.html.main.inner[3].inner.push(li);
+        //add the html
+        list.push(li);
 
-          if(this.html.main.inner[3].inner.length == (this.total-1)){
-            /*
-             * we received anything with delay 
-              -> trigger now the rendering of the result
-            */
-            if(this.show_results){
-              let html = $.html(this.html.main);
-              $.setContent(self.element, html);
-            }
-            else{
-              $.setContent(self.element, "");
-            }
-          }
-        }
-      };
-
-      /*
-       * Set's the flag for delay action and retriggers the transmission
-       */
-      this.send_delay = () => {
-        this.time_delay = true;
-
-        //again wait five seconds for all instances to be synchronus
-        setTimeout(this.write.bind(this), 5000);
+        //check if we are done
+        this.check_iter_finish();
       };
 
 
       /*
-       * Writes our local identifier value in the database
-       * if this.delay is set, there's a random delay before saving
+       * Writes our local identifier value in the database with a delay depending on the iteration
        */
       this.write = async () => {
-        //set the value
-        this.dataset.sended_value = this.identifier;
+        //set iteration info(for error tracking) and our identifier for the test itself
+        this.dataset.sended_value = {iteration : this.iteration, identifier : this.identifier};
 
-        //save it to db
-        if(this.time_delay){
+
+        //save it to db with some delay, dependening on the iteration
+        if(this.iteration == 1){
           //Set delay if there's one
-          setTimeout(async () => {
-            await this.datastore.store.set(this.dataset);
-          }, Math.floor((Math.random() * 1000) + 50));
+          await this.save();
+          this.sended = true
+          this.check_iter_finish();
+        }
+        else if(this.iteration == 2){
+          //do it with random delay
+          setTimeout(
+            async () => {
+              await this.save(); 
+              this.sended = true
+              this.check_iter_finish();
+            }, 
+            Math.floor(Math.random() * 1000) + 10
+          );
         }
         else{
-            //else do it immediatly
-            await this.datastore.store.set(this.dataset);
+          //do it with random delay
+          setTimeout(
+            async () => {
+              await this.save(); 
+              this.sended = true
+              this.check_iter_finish();
+            }, 
+            10
+          );
         }
       };
 
@@ -147,10 +186,11 @@
       this.start = async () => {
         this.dataset = await $.dataset(this.datastore);
         this.datastore.store.onchange = this.onreceive.bind(this);
-        this.time_delay = false;
+        this.iteration = 1;
+        this.sended = false;
 
-        //at start, wait 5 seconds to be sure each instance is started
-        setTimeout(this.write.bind(this), 5000);
+        //at start, wait 2 seconds to be sure each instance is started
+        setTimeout(this.write.bind(this), 2000);
       };
 
     }
