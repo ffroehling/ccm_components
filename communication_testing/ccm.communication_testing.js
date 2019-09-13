@@ -25,6 +25,7 @@
       html: {
         main: {
           inner: [
+              {tag : "h1", inner : []},
               {tag : "h3", inner : 'Received instances immediatly after start'},
               {tag : "ul", inner : []},
               {tag : "h3", inner : 'Received instances with random delay'},
@@ -78,15 +79,20 @@
         await this.datastore.store.set(this.dataset);
       }
 
+      /*
+       * Checks if the current iteration is finished. This is the case iff
+       * 1) The instance received the message from every other instance AND
+       * 2) The instance sent the own message
+       */
       this.check_iter_finish = () => {
         //get's the html list index depending on the iteration
-        let list_idx = (2* this.iteration) -1 ; 
+        let list_idx = (2* this.iteration) ; 
 
         //get the list
         let list = this.html.main.inner[list_idx].inner; 
 
-        if((list.length == (this.total - 1)) && this.sended){
-            //we sended our value AND the list is full -> next iteration
+        if((list.length == (this.total - 1)) && this.sent){
+            //we sent our value AND the list is full -> next iteration
             this.iteration += 1;
 
             if(this.iteration > 3){
@@ -102,8 +108,8 @@
             }
             else{
               //repeat the sending logic
-              this.sended = false;
-              setTimeout(this.write, 5000);
+              this.sent = false;
+              setTimeout(this.write, 2000);
             }
         }
       };
@@ -112,8 +118,9 @@
        * Get's called upon dataset change notified by server
        * */
       this.onreceive = async (dataset) => {
-        let rec_iteration = dataset.sended_value.iteration;
-        let rec_value = dataset.sended_value.identifier;
+        //get sent values of the dataset
+        let rec_iteration = dataset.sent_value.iteration;
+        let rec_value = dataset.sent_value.identifier;
 
         //first check if we received a value from a wrong iteration
         if(rec_iteration != this.iteration){
@@ -128,7 +135,7 @@
         };
        
         //get's the html list index depending on the iteration
-        let list_idx = (2* this.iteration) -1 ; 
+        let list_idx = (2* this.iteration) ; 
 
         //get the list
         let list = this.html.main.inner[list_idx].inner; 
@@ -146,35 +153,30 @@
        */
       this.write = async () => {
         //set iteration info(for error tracking) and our identifier for the test itself
-        this.dataset.sended_value = {iteration : this.iteration, identifier : this.identifier};
+        this.dataset.sent_value = {iteration : this.iteration, identifier : this.identifier};
 
+        let send_func = async () => {
+          await this.save();
+          this.sent = true
+          this.check_iter_finish();
+        }
 
         //save it to db with some delay, dependening on the iteration
         if(this.iteration == 1){
           //Set delay if there's one
-          await this.save();
-          this.sended = true
-          this.check_iter_finish();
+          send_func();
         }
         else if(this.iteration == 2){
           //do it with random delay
           setTimeout(
-            async () => {
-              await this.save(); 
-              this.sended = true
-              this.check_iter_finish();
-            }, 
+            send_func,
             Math.floor(Math.random() * 1000) + 10
           );
         }
         else{
-          //do it with random delay
+          //do it with small delay (almost immediatly)
           setTimeout(
-            async () => {
-              await this.save(); 
-              this.sended = true
-              this.check_iter_finish();
-            }, 
+            send_func,
             10
           );
         }
@@ -184,10 +186,20 @@
        * starts the instance
        */
       this.start = async () => {
+        //get the dataset
         this.dataset = await $.dataset(this.datastore);
+
+        //set the callback response
         this.datastore.store.onchange = this.onreceive.bind(this);
-        this.iteration = 1;
-        this.sended = false;
+
+        //start at the first iteration
+        this.iteration = 1; 
+
+        //the instance did not sent a value yet
+        this.sent = false;
+
+        //set the header of the instance
+        this.html.main.inner[0].inner = this.identifier;
 
         //at start, wait 2 seconds to be sure each instance is started
         setTimeout(this.write.bind(this), 2000);
