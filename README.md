@@ -16,6 +16,6 @@ With ccm you can create web components easily. Have look [here](https://github.c
 These are my developed components:
 
 | Name |   Description | Links |
-|------|---------------------|---|---|
+|------|---------------------|------|
 | Realtime Quiz | A component to execute multiplayer realtime quiz with several quiz methods | To be linked to... |
 | Quiz Choice | A quizmethod for executing multiple choice exercises. It is compatible with the realtime quiz | [Example](https://ffroehling.github.io/ccm_components/choice/local.html), [README](https://ffroehling.github.io/ccm_components/choice/local.html)| 
