@@ -18,4 +18,5 @@ These are my developed components:
 | Name |   Description | Links |
 |------|---------------------|------|
 | Realtime Quiz | A component to execute multiplayer realtime quiz with several quiz methods | To be linked to... |
-| Quiz Choice | A quizmethod for executing multiple choice exercises. It is compatible with the realtime quiz | [Example](https://ffroehling.github.io/ccm_components/choice/local.html), [README](https://ffroehling.github.io/ccm_components/choice/), [Configuration](https://ffroehling.github.io/ccm_components/choice/resources/configs.js)| 
+| Quiz Choice | A quizmethod for executing multiple choice exercises. It is compatible with the realtime quiz | [Example](https://ffroehling.github.io/ccm_components/choice/local.html), [README](https://ffroehling.github.io/ccm_components/choice/), [Configuration](https://ffroehling.github.io/ccm_components/choice/resources/configs.js), [Source Code](https://ffroehling.github.io/ccm_components/choice/versions/ccm.quiz_choice-1.0.0.js)
+ 

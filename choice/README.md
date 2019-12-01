@@ -7,6 +7,9 @@ This component is compatible with the Realtime quiz component.
 # Test
 Open local.html to see how the component works
 
+# Source Code
+* [Version 1.0.0](https://ffroehling.github.io/ccm_components/choice/versions/ccm.quiz_choice-1.0.0.js)
+
 # Example 
 Have a look [here](https://ffroehling.github.io/ccm_components/choice/local.html) for an example of an running app.
 
