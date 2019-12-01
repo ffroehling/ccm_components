@@ -1,5 +1,21 @@
-# ccm_components
-This is a collection of my created CCM components
+# CCM Components 
+This is a collection of CCM components created by Felix Fröhling. Each component is published in the Digital Makerspace (DMS).
 
-# CCM
-For a description of ccm please have a look at https://github.com/ccmjs/ccm
+# References
+
+## What is the Digital Makerspace (DMS)?
+In short: The Digital Makerspace (DMS) is a place where you can create, edit and share web components. Each component can be used in different ways by modifying the it's config. A component + config is called "App".
+
+### References
+[Link to DMS](https://ccmjs.github.io/digital-maker-space/#dms=components)
+[Github and further description](https://github.com/ccmjs/digital-maker-space)
+
+## What is CCM?
+With ccm you can create web components easily. Have look [here](https://github.com/ccmjs/ccm/wiki) for more info
+
+# Developed CCM Components
+These are my developed components:
+
+| Name |   Description | Example |  Readme |
+|------|---------------------|---|---|
+| Realtime Quiz | A component to execute multiplayer realtime quiz with several quiz methods | To be linked to | To be linked to |
