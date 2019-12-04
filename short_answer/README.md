@@ -8,7 +8,7 @@ This component is compatible with the Realtime quiz component.
 Open local.html to see how the component works
 
 # Source Code
-* [Version 1.0.0](https://ffroehling.github.io/ccm_components/short_answer/versions/ccm.short_answer-1.0.0.js)
+* [Version 1.0.0](https://ffroehling.github.io/ccm_components/short_answer/versions/ccm.quiz_short_answer-1.0.0.js)
 
 # Example 
 Have a look [here](https://ffroehling.github.io/ccm_components/short_answer/local.html) for an example of an running app.
