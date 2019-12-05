@@ -1,15 +1,4 @@
-/**
- * @configurations for a multiplayer realtime test quiz
- * @author Felix Fröhling <felix.froehling1@gmail.com> 2019
- * @license The MIT License (MIT)
- */
-
-ccm.files[ 'configs.js' ] = {
-  /*
-   * This section simply includes all neccessary configuration options 
-   * and uses all available quiz methods
-   */
-  "test_quiz": { 
+{ 
     "css": [ "ccm.load", "https://ffroehling.github.io/ccm_components/quiz/resources/style.css"], 
 
     "data": {
@@ -20,13 +9,13 @@ ccm.files[ 'configs.js' ] = {
           "dataset" : "ffroeh2s_example_quiz"
         }
       ],
-      key: "ffroeh2s_example_quiz",
+      "key": "ffroeh2s_example_quiz"
     },
 
     "gamification" : 
-      ['ccm.instance', 
-      'https://ffroehling.github.io/ccm_components/gamification/versions/ccm.gamification-1.0.0.js', {
-        "css" : ['ccm.load', 'https://ffroehling.github.io/ccm_components/gamification/resources/style.css'],
+      ["ccm.instance", 
+      "https://ffroehling.github.io/ccm_components/gamification/versions/ccm.gamification-1.0.0.js", {
+        "css" : ["ccm.load", "https://ffroehling.github.io/ccm_components/gamification/resources/style.css"],
 
         "default_mode" : "mode_order",
         "default_answer_points" : 100,
@@ -306,6 +295,5 @@ ccm.files[ 'configs.js' ] = {
           "finish" : "Spiel beenden" 
         }
       }
-    }
   }
 }
