@@ -1,0 +1,155 @@
+@keyframes fallin {
+  from {
+     opacity : 0.0;
+     transform: perspective(500pt) translateZ(500pt);
+  }
+  to {
+     opacity : 1;
+     transform: perspective(500pt) translateZ(0pt);
+  }
+}
+
+@keyframes bounce {
+  from {
+     opacity : 0.6;
+     transform: perspective(500pt) translateZ(150pt);
+  }
+  to {
+     opacity : 1;
+     transform: perspective(500pt) translateZ(100pt);
+  }
+}
+
+@keyframes listitem {
+    /*0% {
+      color: black;
+      background-color: gray;
+    }
+    25% {
+      background-color: #1b385c;
+      color: white;
+    }
+    50% {
+        background-color: gray;
+      color: white;
+
+    }
+    100% {
+        color: black;
+        background-color: gray;
+    }*/
+  from {
+    opacity : 0;
+    transform: perspective(500pt) translateZ(100pt);
+  }
+  to {
+    opacity : 1;
+    transform: perspective(500pt) translateZ(0pt);
+  }
+}
+
+#show_points {
+  width: 80%;
+  margin-left : auto;
+  margin-right : auto;
+  padding-top : 100pt;
+}
+
+#show_points * {
+  margin-left : auto;
+  margin-right : auto;
+  text-align : center;
+}
+
+#show_points h3 {
+  font-size: 30pt;
+  color : #dca26c;
+  animation-name: fallin;
+  animation-duration: 1.5s;
+}
+
+#show_points p {
+  font-size: 60pt;
+  color : #6ca6dc;
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+#scoreboard {
+  width: 80%;
+  margin-left : auto;
+  margin-right : auto;
+  padding-top : 100pt;
+}
+
+#scoreboard ul {
+  margin-left : auto;
+  margin-right : auto;
+  text-align : center;
+
+  list-style-type : none;
+}
+
+#scoreboard ul li{
+  width: 50%;
+  height: 50pt;
+  margin-left : auto;
+  margin-right : auto;
+  border-bottom: 3px solid #dca26c;
+  border-left: 3px solid #dca26c;
+  border-right: 3px solid #dca26c;
+  border-top: 3px solid #dca26c;
+  border-radius : 5pt;
+  margin-top : 10pt;
+  background : #FAFAFA;
+
+  animation : listitem;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity : 0;
+}
+
+.position {
+  width : 30pt;
+  height: 30pt;
+  line-height : 30pt;
+  margin-top : 10pt;
+  margin-left : 10pt;
+
+  float : left;
+  font-size: 25pt;
+
+  border : 1px solid black;
+  border-radius: 50%;
+  border-color : #dca26c;
+  background: #dca26c;
+  color : white;
+}
+
+.player_name {
+  float : left;
+  font-size : 20pt;
+  margin-top : 15pt;
+  margin-left : 15pt;
+  font-weight : bold;
+}
+
+.points {
+  float : right;
+  font-size : 20pt;
+  margin-top : 15pt;
+  margin-right : 10pt;
+  color : #6ca6dc;
+}
+
+#scoreboard ul li:nth-child(0) {animation-delay: 0.0s; }
+#scoreboard ul li:nth-child(1) {animation-delay: 0.3s; }
+#scoreboard ul li:nth-child(2) {animation-delay: 0.5s; }
+#scoreboard ul li:nth-child(3) {animation-delay: 0.8s; }
+#scoreboard ul li:nth-child(4) {animation-delay: 1.2s; }
+#scoreboard ul li:nth-child(5) {animation-delay: 1.5s; }
+#scoreboard ul li:nth-child(6) {animation-delay: 1.8s; }
+#scoreboard ul li:nth-child(7) {animation-delay: 2.1s; }
+#scoreboard ul li:nth-child(8) {animation-delay: 2.4s; }
