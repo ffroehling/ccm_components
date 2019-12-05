@@ -9,7 +9,7 @@ This is a component for Sync-MS communication. It enables other components to co
 This is a implementation of Sync-MS as a CCM-Component.
 
 
-#Description
+# Description
 
 ## Folder structure
 
