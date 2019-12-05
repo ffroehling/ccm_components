@@ -8,7 +8,7 @@ The component is able to to a (basic but nice) visualiazation of
 - the scoreboard
 
 # Source Code
-[Version 1.0.0](gamification/versions/ccm.gamifcation-1.0.0.js)
+[Version 1.0.0](versions/ccm.gamifcation-1.0.0.js)
 
 
 # Point calculation
