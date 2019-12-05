@@ -8,6 +8,8 @@ This is a component for Sync-MS communication. It enables other components to co
 ## Implementation
 This is a implementation of Sync-MS as a CCM-Component.
 
+# Source Code
+[Version 1.0.0](syncms/src/versions/ccm.syncms-1.0.0.js)
 
 # Description
 
