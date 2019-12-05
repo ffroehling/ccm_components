@@ -3,7 +3,7 @@
 This is a quiz component for realtime multiplayer quiz.
 
 # Example
-Click [here](example.html) and open it in multiple *windows* (there have been issues in synchronisation with only different tabs instead of windows).
+Click [here](example.html) and open it in multiple *windows* since there have been issues in synchronisation with only different tabs instead of windows. Once you have chosen your username you can Create a game or join an existing one. Obviously you need to create you game before joining one in the other instances. You can then start the game.
 
 # Versions
 [Version 1.0.0](versions/ccm.quiz-1.0.0.js)
