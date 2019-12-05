@@ -1,0 +1,318 @@
+/*.button_answer {
+  display: block;
+  width: 25%;
+  margin: 10px;
+
+  border-radius: 15px;
+  border-color: white;
+  height: 50px;
+  background: #379aff;
+
+  color: white;
+  font-size: 1.2em;
+}
+
+.answer_input {
+  width: 50%;
+  height: 2.5em;
+}*/
+
+/*#####################SECTION PREGAME#########################*/
+#start_dialog {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align : left;
+  border : 1px solid #A9D0F5;
+  border-radius : 5pt;
+}
+
+#welcome_header {
+  text-align : left;
+  background : #A9D0F5;
+  color : black;
+  margin : 0;
+  padding-top : 10pt;
+  padding-bottom : 10pt;
+  padding-left : 10pt;
+}
+
+#welcome_sub  {
+  text-align : left;
+  padding-left : 10pt;
+}
+
+.action_button {
+  width: 40%;
+
+  margin-left : 10pt;
+  margin-top : 10pt;
+  margin-bottom : 10pt;
+
+  background : #f5cea9;
+  border-color: #f5cea9;
+  border-style: solid;
+  border-radius : 5pt;
+
+  font-size: 15pt;
+  cursor : pointer;
+}
+
+.joining_dialo {
+  width: 50%;
+  margin-left : auto;
+  margin-right : auto;
+}
+
+.joining_dialo h3{
+  text-align : center;
+}
+
+.joining_dialo p{
+  text-align : center;
+}
+
+#game_list {
+  width : 100%;
+  list-style-type : none;
+  border : 1px solid #A9d0F5;
+  border-radius : 5pt;
+  padding : 0;
+}
+
+#game_list li {
+  width: 100%;
+  height : 15pt; 
+  border-bottom : 1px solid #A9d0F5;
+  padding-top: 10pt;
+  padding-bottom: 10pt;
+  text-align : center;
+  font-weight : bold;
+  cursor : pointer
+
+}
+
+#game_list li:hover {
+  background-color: #A9d0F5;
+}
+
+
+
+
+/*#####################END SECTION PREGAME#####################*/
+
+/*###############SECTION Waiting dialog#####################*/
+.waiting_dialog {
+  width: 50%;
+  margin-left : auto;
+  margin-right : auto;
+  margin-top : 20px;
+
+  border : 2px solid #A9D0F5;
+  border-radius: 5px;
+  padding:10px;
+}
+
+.waiting_dialog h3{
+  width: 100%;
+  text-align : center;
+}
+
+.waiting_dialog p{
+  width: 100%;
+  text-align: center;
+  margin-top : 10px;
+}
+
+.waiting_dialog button{
+  width: 40%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 30pt;
+
+  background : #f5cea9;
+  border-color: #f5cea9;
+  border-style: solid;
+  border-radius : 5pt;
+
+  font-size: 15pt;
+  cursor : pointer;
+}
+
+.waiting_dialog ul{
+  width: 50%;
+  padding : 0;
+  margin-left: 5%;
+  list-style-type : none;
+}
+
+.waiting_dialog ul li{
+  width: 100%;
+  height: 20pt;
+  border-top: 1px solid black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/*###############END SECTION Waiting dialog#####################*/
+
+/*##############SECTION PREPARE#################################*/
+#prepare_question {
+  width: 50%; 
+  margin-left : auto;
+  margin-right : auto;
+  border : 1px solid #A9D0F5;
+}
+
+#prepare_question * {
+  text-align : center;
+}
+
+#prepare_question h1 {
+  color : red;
+  font-size: 30pt;
+}
+/*##############END SECTION PREPARE#############################*/
+
+/*#############SECTION BUZZER###################################*/
+#question_buzzer_wrapper {
+  width: 50%;
+
+  margin-left : auto;
+  margin-right : auto;
+  border : 1px solid #A9D0F5;
+}
+
+#question_buzzer_wrapper h3{
+  text-align : center;
+}
+
+#question_buzzer {
+  width: 90%;
+  height: 150pt;
+  margin-left : 5%;
+  margin-right : 5%;
+  margin-top : 10pt;
+  margin-bottom : 10pt;
+  background : #f5cea9;
+  border-color: #f5cea9;
+  border-style: solid;
+  border-radius : 5pt;
+  font-size: 30pt;
+}
+
+#question_master_decide_wrapper {
+  width: 50%;
+  margin-left : auto;
+  margin-right : auto;
+  border : 1px solid #A9D0F5;
+}
+
+#question_master_decide_wrapper h3{
+  text-align : center;
+}
+
+#question_master_decide_wrapper button{
+  width: 50%;
+  margin-left : 25%;
+  margin-right : 25%;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+  font-size: 15pt;
+
+  background : #f5cea9;
+  border-color: #f5cea9;
+  border-style: solid;
+  border-radius : 5pt;
+}
+
+
+/*#############END SECTION BUZZER###############################*/
+
+
+/*###############SECTION State and message#####################*/
+#state_wrapper {
+  width: 50%;
+  margin-left : auto;
+  margin-right: auto;
+  margin-top: 20px;
+
+  background : #f5cea9;
+  border-color: #f5cea9;
+  border-style: solid;
+  border-radius : 5pt;
+}
+
+#state_wrapper h3 {
+  width: 50%;
+  margin-left : auto;
+  margin-right: auto;
+
+  text-align : center;
+
+}
+
+#message_wrapper {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+  border : 1px solid #f5cea9;
+  border-radius : 5pt;
+}
+
+#message_wrapper {
+  text-align : center;
+}
+
+#next_question_wrapper {
+  width: 50%;
+  margin-left : auto;
+  margin-right : auto;
+  border : 1px solid #A9D0F5;
+}
+
+#next_question_wrapper button{
+  width: 50%;
+  margin-left : 25%;
+  margin-right : 25%;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+  font-size: 15pt;
+  cursor : pointer;
+
+  background : #f5cea9;
+  border-color: #f5cea9;
+  border-style: solid;
+  border-radius : 5pt;
+}
+
+#timeout {
+    margin-left : auto;
+    margin-right : auto;
+
+    text-align : center;
+    font-size : 20pt;
+    color : red;
+    margin-top : 10pt;
+    margin-bottom : 10pt;
+}
+
+#on_finish {
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  height: 30pt;
+
+  background : #f5cea9;
+  border-color: #f5cea9;
+  border-style: solid;
+  border-radius : 5pt;
+
+  font-size: 15pt;
+  cursor : pointer;
+}
+
+
+
+/*###############END SECTION State and message#####################*/
