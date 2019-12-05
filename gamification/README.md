@@ -7,6 +7,9 @@ The component is able to to a (basic but nice) visualiazation of
 - the retrieved points
 - the scoreboard
 
+# Source Code
+[Version 1.0.0](gamification/versions/ccm.gamifcation-1.0.0.js)
+
 
 # Point calculation
 
@@ -21,3 +24,5 @@ In Mode Order, specified by the string "mode_order" correctness and time matter.
 
 ## Usage
 Start the instance, set you list of players either via config or dynamic via *set_players* function. You can add points to player by calling *add_points_to_player*. See src code for neccessary parameters, but this isn't to complicated at all. For rendering the retrieved points call *show_last_points* immediatly without parameters. Scoreboard is rendered by calling *show_scoreboard*.
+
+
