@@ -14,11 +14,10 @@ This is a implementation of Sync-MS as a CCM-Component.
 ## Folder structure
 
 ### src
-The src folder contains the syncms component (with a basic description and further references in the README).
+The [src folder](syncms/src) contains the [syncms component](syncms/src/ccm.syncms.js) (with a basic description and further references in the README). 
 
 ### test
-The test folder contains a component which is for testing the accuracy of syncms. 
-This might not be what you are looking for if you just want to use the component. However, feel free to test the component.
+The [test component](syncms/test/ccm.syncmstest.js) is a component which is for testing the accuracy of syncms. This might not be what you are looking for if you just want to use the component. However, feel free to use this component to test syncms.
 
 # Usage
 For usage see the [README file](src/) in src directory.
