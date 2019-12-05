@@ -60,14 +60,14 @@
       },
 
       //File dependencies
-      game_selection  : ['ccm.load', 'resources/module_versions/pre_game_1.0.0.js'],
-      game_master     : ['ccm.load', 'resources/module_versions/game_master_1.0.0.js'],
-      game_player     : ['ccm.load', 'resources/module_versions/game_player_1.0.0.js'],
-      db_pregame      : ['ccm.load', 'resources/module_versions/database_1.0.0.js'], 
-      db_game         : ['ccm.load', 'resources/module_versions/database_game_1.0.0.js'],
-      helper          : ['ccm.load', 'resources/module_versions/helper_1.0.0.js'],
-      ui              : ['ccm.load', 'resources/module_versions/ui_1.0.0.js'],
-      constants       : ['ccm.load', 'resources/module_versions/constants_1.0.0.js'],
+      game_selection  : ['ccm.load', 'https://ffroehling.github.io/ccm_components/quiz/resources/module_versions/pre_game_1.0.0.js'],
+      game_master     : ['ccm.load', 'https://ffroehling.github.io/ccm_components/quiz/resources/module_versions/game_master_1.0.0.js'],
+      game_player     : ['ccm.load', 'https://ffroehling.github.io/ccm_components/quiz/resources/module_versions/game_player_1.0.0.js'],
+      db_pregame      : ['ccm.load', 'https://ffroehling.github.io/ccm_components/quiz/resources/module_versions/database_1.0.0.js'], 
+      db_game         : ['ccm.load', 'https://ffroehling.github.io/ccm_components/quiz/resources/module_versions/database_game_1.0.0.js'],
+      helper          : ['ccm.load', 'https://ffroehling.github.io/ccm_components/quiz/resources/module_versions/helper_1.0.0.js'],
+      ui              : ['ccm.load', 'https://ffroehling.github.io/ccm_components/quiz/resources/module_versions/ui_1.0.0.js'],
+      constants       : ['ccm.load', 'https://ffroehling.github.io/ccm_components/quiz/resources/module_versions/constants_1.0.0.js'],
 
       //syncms dependency
       syncms : ['ccm.component', 'https://ffroehling.github.io/ccm_components/syncms/src/versions/ccm.syncms-1.0.0.js'],
