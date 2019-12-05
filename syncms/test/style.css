@@ -1,0 +1,38 @@
+table {
+  width: 80%;
+  margin-left : auto;
+  margin-right : auto;
+}
+
+th, td {
+    text-align:center;
+    border:1pt solid black;
+    padding:5pt
+}
+
+.slave_name {
+  background: lightgrey;
+}
+
+.measure_fine {
+  background : green;
+  color : white;
+}
+
+.measure_fail {
+  background : red;
+  color : white;
+}
+
+#legend {
+  margin-left : auto;
+  width : 41%;
+}
+
+#json {
+  width : 100%;
+  margin-left : auto;
+  margin-right : auto;
+}
+
+
